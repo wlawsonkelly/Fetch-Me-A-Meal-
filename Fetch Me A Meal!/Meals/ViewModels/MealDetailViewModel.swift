@@ -23,7 +23,7 @@ class MealDetailViewModel: ObservableObject {
                 self.recipe = fetchedRecipe
             }
         } catch {
-            print("error")
+            print(error.localizedDescription)
         }
     }
 }
