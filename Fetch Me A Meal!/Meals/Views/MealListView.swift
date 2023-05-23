@@ -9,9 +9,16 @@ import SwiftUI
 
 struct MealListView: View {
     @StateObject var mealListViewModel = MealListViewModel()
-    
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                Text("hello world")
+            }
+            .listStyle(.plain)
+            .navigationTitle("Fetch Me A Meal!")
+        }
+        .navigationViewStyle(.stack)
     }
 }
 

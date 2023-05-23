@@ -1,5 +1,5 @@
 //
-//  Meal.swift
+//  Recipe.swift
 //  Fetch Me A Meal!
 //
 //  Created by Lawson Kelly on 5/23/23.
@@ -7,10 +7,8 @@
 
 import Foundation
 
-struct Meal: Codable {
-    var idMeal: String
-    var strMealThumb: String
-    var strMeal: String
+struct Recipe: Codable {
+
 }
 
 /*
@@ -77,3 +75,4 @@ struct Meal: Codable {
  }
  ]
  */
+
