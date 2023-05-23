@@ -16,7 +16,7 @@ struct MealListView: View {
             List(mealListViewModel.meals) { meal in
                 MealListRow(meal: meal)
                     .onTapGesture {
-                        print("hello")
+                        selectedId = meal.idMeal
                     }
             }
             .listStyle(.plain)

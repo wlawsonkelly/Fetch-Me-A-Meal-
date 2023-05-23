@@ -15,6 +15,26 @@ struct MealDetailView: View {
     }
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView {
+                AsyncImage(url: URL(string: mealDetailViewModel.recipe?.strMealThumb ?? "")) { image in
+                    image
+                        .resizable()
+                        .frame(width: 60, height: 60)
+                } placeholder: {
+                    Rectangle()
+                        .redacted(reason: .placeholder)
+                }
+                Text(mealDetailViewModel.recipe?.strInstructions ?? "")
+                Text(mealDetailViewModel.recipe?.strIngredient1 ?? "")
+                Text(mealDetailViewModel.recipe?.strIngredient2 ?? "")
+            }
+            .onAppear {
+                Task {
+                    try await mealDetailViewModel.getDetails(id: mealDetailViewModel.id)
+                }
+            }
+        }
+        .navigationViewStyle(.stack)
     }
 }

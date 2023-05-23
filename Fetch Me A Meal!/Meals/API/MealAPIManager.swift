@@ -18,6 +18,7 @@ class MealAPIManager: MealAPI {
 
     static let baseUrl = "https://themealdb.com"
     static let desertEndpoint = "/api/json/v1/1/filter.php?c=Dessert"
+    static let idEndpoint = "/api/json/v1/1/lookup.php?i="
 
     private init() {}
 
@@ -31,6 +32,11 @@ class MealAPIManager: MealAPI {
     }
 
     func getDesertRecipe(id: String) async throws -> Recipe? {
-        return nil
+        guard let url = URL(string: MealAPIManager.baseUrl + MealAPIManager.idEndpoint + id) else { return nil
+        }
+        let urlRequest = URLRequest(url: url)
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        let recipe = try JSONDecoder().decode(MealDetailResponse.self, from: data)
+        return recipe.meals.first
     }
 }
