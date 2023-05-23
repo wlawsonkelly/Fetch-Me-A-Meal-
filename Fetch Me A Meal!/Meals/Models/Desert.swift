@@ -17,6 +17,10 @@ struct MealListData: Codable {
     var strMeal: String
 }
 
+extension MealListData: Identifiable {
+    var id: String { return idMeal }
+}
+
 /*
  {
  idMeal: "53049",

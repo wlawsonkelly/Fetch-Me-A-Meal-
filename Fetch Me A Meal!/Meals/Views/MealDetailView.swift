@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct MealDetailView: View {
-    @StateObject var mealDetailViewModel = MealDetailViewModel()
+    @StateObject var mealDetailViewModel: MealDetailViewModel
+
+    init(mealDetailViewModel: MealDetailViewModel) {
+        _mealDetailViewModel = StateObject(wrappedValue: mealDetailViewModel)
+    }
 
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct MealDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MealDetailView()
     }
 }

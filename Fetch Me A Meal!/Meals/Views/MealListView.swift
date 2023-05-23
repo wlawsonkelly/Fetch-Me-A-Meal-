@@ -12,11 +12,16 @@ struct MealListView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                Text("hello world")
+            List(mealListViewModel.meals) { meal in
+                Text(meal.strMeal)
             }
             .listStyle(.plain)
             .navigationTitle("Fetch Me A Meal!")
+            .onAppear {
+                Task {
+                    try await mealListViewModel.getMeals()
+                }
+            }
         }
         .navigationViewStyle(.stack)
     }
