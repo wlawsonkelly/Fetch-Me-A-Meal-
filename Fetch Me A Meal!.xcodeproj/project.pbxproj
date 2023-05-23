@@ -14,6 +14,8 @@
 		0814F9312A1D07E100FB05F0 /* Fetch_Me_A_Meal_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F9302A1D07E100FB05F0 /* Fetch_Me_A_Meal_Tests.swift */; };
 		0814F93B2A1D07E100FB05F0 /* Fetch_Me_A_Meal_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F93A2A1D07E100FB05F0 /* Fetch_Me_A_Meal_UITests.swift */; };
 		0814F93D2A1D07E100FB05F0 /* Fetch_Me_A_Meal_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F93C2A1D07E100FB05F0 /* Fetch_Me_A_Meal_UITestsLaunchTests.swift */; };
+		0814F9502A1D0AB000FB05F0 /* MealAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F94F2A1D0AB000FB05F0 /* MealAPIManager.swift */; };
+		0814F9522A1D202E00FB05F0 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F9512A1D202E00FB05F0 /* Meal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		0814F9362A1D07E100FB05F0 /* Fetch Me A Meal!UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetch Me A Meal!UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0814F93A2A1D07E100FB05F0 /* Fetch_Me_A_Meal_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_Me_A_Meal_UITests.swift; sourceTree = "<group>"; };
 		0814F93C2A1D07E100FB05F0 /* Fetch_Me_A_Meal_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_Me_A_Meal_UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0814F94F2A1D0AB000FB05F0 /* MealAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAPIManager.swift; sourceTree = "<group>"; };
+		0814F9512A1D202E00FB05F0 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		0814F91E2A1D07DF00FB05F0 /* Fetch Me A Meal! */ = {
 			isa = PBXGroup;
 			children = (
+				0814F94A2A1D0A6E00FB05F0 /* Settings */,
+				0814F9492A1D0A4800FB05F0 /* Meals */,
 				0814F91F2A1D07DF00FB05F0 /* Fetch_Me_A_Meal_App.swift */,
 				0814F9212A1D07DF00FB05F0 /* ContentView.swift */,
 				0814F9232A1D07E100FB05F0 /* Assets.xcassets */,
@@ -125,6 +131,54 @@
 				0814F93C2A1D07E100FB05F0 /* Fetch_Me_A_Meal_UITestsLaunchTests.swift */,
 			);
 			path = "Fetch Me A Meal!UITests";
+			sourceTree = "<group>";
+		};
+		0814F9492A1D0A4800FB05F0 /* Meals */ = {
+			isa = PBXGroup;
+			children = (
+				0814F94E2A1D0A9000FB05F0 /* API */,
+				0814F94D2A1D0A8600FB05F0 /* Modals */,
+				0814F94C2A1D0A7E00FB05F0 /* ViewModels */,
+				0814F94B2A1D0A7800FB05F0 /* Views */,
+			);
+			path = Meals;
+			sourceTree = "<group>";
+		};
+		0814F94A2A1D0A6E00FB05F0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0814F94B2A1D0A7800FB05F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0814F94C2A1D0A7E00FB05F0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0814F94D2A1D0A8600FB05F0 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				0814F9512A1D202E00FB05F0 /* Meal.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		0814F94E2A1D0A9000FB05F0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0814F94F2A1D0AB000FB05F0 /* MealAPIManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0814F9522A1D202E00FB05F0 /* Meal.swift in Sources */,
 				0814F9222A1D07DF00FB05F0 /* ContentView.swift in Sources */,
 				0814F9202A1D07DF00FB05F0 /* Fetch_Me_A_Meal_App.swift in Sources */,
+				0814F9502A1D0AB000FB05F0 /* MealAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +481,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,6 +511,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
