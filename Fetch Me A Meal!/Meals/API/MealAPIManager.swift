@@ -9,12 +9,19 @@ import Foundation
 import Combine
 
 protocol MealAPI {
-    func getMeals() -> [Meal]
+    func getDesertList() async throws -> [MealListData]
+    func getDesertRecipe(id: String) async throws -> Recipe?
 }
 
 class MealAPIManager: MealAPI {
-
-    func getMeals() -> [Meal] {
+    func getDesertList() async throws -> [MealListData] {
+        guard let url = URL(string: "") else { return []
+        }
+        let urlRequest = URLRequest(url: url)
         return []
+    }
+
+    func getDesertRecipe(id: String) async throws -> Recipe? {
+        return nil
     }
 }
