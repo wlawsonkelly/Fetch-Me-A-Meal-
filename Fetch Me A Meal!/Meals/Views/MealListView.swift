@@ -9,11 +9,15 @@ import SwiftUI
 
 struct MealListView: View {
     @StateObject var mealListViewModel = MealListViewModel()
+    @State var selectedId: String? = nil
 
     var body: some View {
         NavigationView {
             List(mealListViewModel.meals) { meal in
-                Text(meal.strMeal)
+                MealListRow(meal: meal)
+                    .onTapGesture {
+                        print("hello")
+                    }
             }
             .listStyle(.plain)
             .navigationTitle("Fetch Me A Meal!")
@@ -21,6 +25,9 @@ struct MealListView: View {
                 Task {
                     try await mealListViewModel.getMeals()
                 }
+            }
+            .sheet(item: $selectedId) { id in
+                MealDetailView(mealDetailViewModel: MealDetailViewModel(id: id))
             }
         }
         .navigationViewStyle(.stack)

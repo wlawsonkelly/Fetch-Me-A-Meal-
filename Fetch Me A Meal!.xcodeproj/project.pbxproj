@@ -23,6 +23,7 @@
 		0814F9682A1D3F8800FB05F0 /* MealListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F9672A1D3F8800FB05F0 /* MealListRow.swift */; };
 		0814F96A2A1D3F9300FB05F0 /* MealListRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F9692A1D3F9300FB05F0 /* MealListRowViewModel.swift */; };
 		0814F96C2A1D41FC00FB05F0 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F96B2A1D41FC00FB05F0 /* Recipe.swift */; };
+		0814F96E2A1D52D100FB05F0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F96D2A1D52D100FB05F0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		0814F9672A1D3F8800FB05F0 /* MealListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListRow.swift; sourceTree = "<group>"; };
 		0814F9692A1D3F9300FB05F0 /* MealListRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListRowViewModel.swift; sourceTree = "<group>"; };
 		0814F96B2A1D41FC00FB05F0 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		0814F96D2A1D52D100FB05F0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +114,12 @@
 		0814F91E2A1D07DF00FB05F0 /* Fetch Me A Meal! */ = {
 			isa = PBXGroup;
 			children = (
-				0814F94A2A1D0A6E00FB05F0 /* Settings */,
 				0814F9492A1D0A4800FB05F0 /* Meals */,
 				0814F91F2A1D07DF00FB05F0 /* Fetch_Me_A_Meal_App.swift */,
 				0814F9212A1D07DF00FB05F0 /* ContentView.swift */,
 				0814F9232A1D07E100FB05F0 /* Assets.xcassets */,
 				0814F9252A1D07E100FB05F0 /* Preview Content */,
+				0814F96D2A1D52D100FB05F0 /* Extensions.swift */,
 			);
 			path = "Fetch Me A Meal!";
 			sourceTree = "<group>";
@@ -156,13 +158,6 @@
 				0814F94D2A1D0A8600FB05F0 /* Models */,
 			);
 			path = Meals;
-			sourceTree = "<group>";
-		};
-		0814F94A2A1D0A6E00FB05F0 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		0814F94D2A1D0A8600FB05F0 /* Models */ = {
@@ -339,6 +334,7 @@
 				0814F9222A1D07DF00FB05F0 /* ContentView.swift in Sources */,
 				0814F9202A1D07DF00FB05F0 /* Fetch_Me_A_Meal_App.swift in Sources */,
 				0814F9502A1D0AB000FB05F0 /* MealAPIManager.swift in Sources */,
+				0814F96E2A1D52D100FB05F0 /* Extensions.swift in Sources */,
 				0814F9642A1D3EDA00FB05F0 /* MealDetailViewModel.swift in Sources */,
 				0814F96A2A1D3F9300FB05F0 /* MealListRowViewModel.swift in Sources */,
 				0814F9602A1D3EBF00FB05F0 /* MealListView.swift in Sources */,

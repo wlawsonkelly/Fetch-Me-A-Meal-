@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct MealListRow: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    var meal: MealListData
 
-struct MealListRow_Previews: PreviewProvider {
-    static var previews: some View {
-        MealListRow()
+    var body: some View {
+        HStack {
+            AsyncImage(url: URL(string: meal.strMealThumb)) { image in
+                image
+                    .resizable()
+                    .frame(width: 60, height: 60)
+            } placeholder: {
+                Rectangle()
+                    .redacted(reason: .placeholder)
+            }
+            Text(meal.strMeal)
+        }
     }
 }

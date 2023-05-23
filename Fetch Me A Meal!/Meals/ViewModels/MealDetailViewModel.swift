@@ -8,5 +8,7 @@
 import Foundation
 
 class MealDetailViewModel: ObservableObject {
-    
+    init(id: String) {
+        
+    }
 }
