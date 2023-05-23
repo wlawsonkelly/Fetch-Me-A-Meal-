@@ -9,7 +9,7 @@ import Foundation
 
 class MealDetailViewModel: ObservableObject {
     @Published var recipe: Recipe?
-    @Published var instructions: [String] = []
+    @Published var ingredientMeasurementArray: [IngredientMeasurement] = []
     let id: String
 
     init(id: String) {
@@ -19,11 +19,16 @@ class MealDetailViewModel: ObservableObject {
     func getDetails(id: String) async throws {
         do {
             let fetchedRecipe = try await MealAPIManager.shared.getDesertRecipe(id: id)
+            getIngredientArray()
             DispatchQueue.main.async {
                 self.recipe = fetchedRecipe
             }
         } catch {
             print(error.localizedDescription)
         }
+    }
+
+    func getIngredientArray() {
+
     }
 }

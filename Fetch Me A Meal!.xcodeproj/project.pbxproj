@@ -24,6 +24,7 @@
 		0814F96A2A1D3F9300FB05F0 /* MealListRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F9692A1D3F9300FB05F0 /* MealListRowViewModel.swift */; };
 		0814F96C2A1D41FC00FB05F0 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F96B2A1D41FC00FB05F0 /* Recipe.swift */; };
 		0814F96E2A1D52D100FB05F0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F96D2A1D52D100FB05F0 /* Extensions.swift */; };
+		0814F9702A1D863D00FB05F0 /* IngredientMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F96F2A1D863D00FB05F0 /* IngredientMeasurement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		0814F9692A1D3F9300FB05F0 /* MealListRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListRowViewModel.swift; sourceTree = "<group>"; };
 		0814F96B2A1D41FC00FB05F0 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0814F96D2A1D52D100FB05F0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0814F96F2A1D863D00FB05F0 /* IngredientMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientMeasurement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				0814F9512A1D202E00FB05F0 /* Desert.swift */,
 				0814F96B2A1D41FC00FB05F0 /* Recipe.swift */,
+				0814F96F2A1D863D00FB05F0 /* IngredientMeasurement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				0814F9682A1D3F8800FB05F0 /* MealListRow.swift in Sources */,
 				0814F9622A1D3ECB00FB05F0 /* MealDetailView.swift in Sources */,
 				0814F9662A1D3EED00FB05F0 /* MealListViewModel.swift in Sources */,
+				0814F9702A1D863D00FB05F0 /* IngredientMeasurement.swift in Sources */,
 				0814F9522A1D202E00FB05F0 /* Desert.swift in Sources */,
 				0814F9222A1D07DF00FB05F0 /* ContentView.swift in Sources */,
 				0814F9202A1D07DF00FB05F0 /* Fetch_Me_A_Meal_App.swift in Sources */,

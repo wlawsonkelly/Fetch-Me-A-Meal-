@@ -17,17 +17,25 @@ struct MealDetailView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                AsyncImage(url: URL(string: mealDetailViewModel.recipe?.strMealThumb ?? "")) { image in
-                    image
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                } placeholder: {
-                    Rectangle()
-                        .redacted(reason: .placeholder)
+                if let recipe = mealDetailViewModel.recipe {
+                    AsyncImage(url: URL(string: recipe.strMealThumb ?? "")) { image in
+                        image
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                    } placeholder: {
+                        Rectangle()
+                            .frame(width: 60, height: 60)
+                            .redacted(reason: .placeholder)
+                    }
+                    VStack {
+                        Text(recipe.strInstructions ?? "")
+                        ForEach(recipe.getIngredients()) { ingredient in
+                            if let measurement = ingredient.measureMent {
+                                Text("\(ingredient.ingredient) ")
+                            }
+                        }
+                    }
                 }
-                Text(mealDetailViewModel.recipe?.strInstructions ?? "")
-                Text(mealDetailViewModel.recipe?.strIngredient1 ?? "")
-                Text(mealDetailViewModel.recipe?.strIngredient2 ?? "")
             }
             .onAppear {
                 Task {
