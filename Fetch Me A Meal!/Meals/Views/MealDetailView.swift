@@ -15,26 +15,39 @@ struct MealDetailView: View {
     }
 
     var body: some View {
-        NavigationView {
+        GeometryReader { geometry in
             ScrollView {
                 if let recipe = mealDetailViewModel.recipe {
                     AsyncImage(url: URL(string: recipe.strMealThumb ?? "")) { image in
                         image
                             .resizable()
-                            .frame(width: 60, height: 60)
+                            .frame(width: geometry.size.width, height: 300)
                     } placeholder: {
                         Rectangle()
-                            .frame(width: 60, height: 60)
+                            .frame(width: geometry.size.width, height: 300)
                             .redacted(reason: .placeholder)
                     }
-                    VStack {
-                        Text(recipe.strInstructions ?? "")
-                        ForEach(recipe.getIngredients()) { ingredient in
-                            if let measurement = ingredient.measureMent {
-                                Text("\(ingredient.ingredient) ")
+                    VStack(alignment: .leading, spacing: 16) {
+                        VStack(alignment: .leading) {
+                            Text("Instructions:")
+                                .font(.title)
+                            Text(recipe.strInstructions ?? "")
+                        }
+                        VStack(alignment: .leading) {
+                            Text("Measurements:")
+                                .font(.title)
+                            ForEach(recipe.getIngredients()) { ingredient in
+                                if ingredient.ingredient != "".trimmingCharacters(in: .whitespaces) {
+                                    if let measurement = ingredient.measureMent {
+                                        Text("\(ingredient.ingredient): \(measurement)")
+                                    } else {
+                                        Text("\(ingredient.ingredient)")
+                                    }
+                                }
                             }
                         }
                     }
+                    .padding()
                 }
             }
             .onAppear {
@@ -43,6 +56,5 @@ struct MealDetailView: View {
                 }
             }
         }
-        .navigationViewStyle(.stack)
     }
 }
