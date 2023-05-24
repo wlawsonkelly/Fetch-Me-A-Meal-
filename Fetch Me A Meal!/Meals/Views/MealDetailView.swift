@@ -17,15 +17,14 @@ struct MealDetailView: View {
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
-                if let recipe = mealDetailViewModel.recipe {
-                    AsyncImage(url: URL(string: recipe.strMealThumb ?? "")) { image in
-                        image
-                            .resizable()
-                            .frame(width: geometry.size.width, height: 300)
-                    } placeholder: {
-                        Rectangle()
-                            .frame(width: geometry.size.width, height: 300)
-                            .redacted(reason: .placeholder)
+                if let recipe = mealDetailViewModel.recipe,
+                   let imageUrl = URL(string: recipe.strMealThumb ?? "") {
+                    CacheAsyncImageView(url: imageUrl) { phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .frame(width: geometry.size.width, height: 300)
+                        }
                     }
                     VStack(alignment: .leading, spacing: 16) {
                         VStack(alignment: .leading) {
