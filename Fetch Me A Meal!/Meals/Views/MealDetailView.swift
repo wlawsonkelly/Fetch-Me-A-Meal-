@@ -46,14 +46,20 @@ struct MealDetailView: View {
                                 }
                             }
                         }
-                    }
-                    .padding()
-                    VStack {
-                        if let youtube = recipe.strYoutube {
-                            TutorialView(tutorialUrl: youtube)
-                                .frame(width: geometry.size.width - 32, height: 300)
+                        VStack {
+                            HStack {
+                                Text("Video:")
+                                    .font(.title)
+                                Spacer()
+                            }
+                            if let youtube = recipe.strYoutube,
+                                let videoId = youtube.getYoutubeId() {
+                                TutorialView(tutorialVideoId: videoId)
+                                    .frame(width: geometry.size.width - 32, height: 300)
+                            }
                         }
                     }
+                    .padding()
                 }
             }
             .onAppear {
