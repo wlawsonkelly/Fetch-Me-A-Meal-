@@ -56,6 +56,7 @@ struct MealDetailView: View {
                                 let videoId = youtube.getYoutubeId() {
                                 TutorialView(tutorialVideoId: videoId)
                                     .frame(width: geometry.size.width - 32, height: 300)
+                                    .cornerRadius(16)
                             }
                         }
                     }
