@@ -5,6 +5,8 @@
 //  Created by Lawson Kelly on 5/24/23.
 //
 
+// I had to learn this from: https://www.youtube.com/watch?v=KhGyiOk3Yzk
+
 import SwiftUI
 
 struct CacheAsyncImageView<Content>: View where Content: View {
