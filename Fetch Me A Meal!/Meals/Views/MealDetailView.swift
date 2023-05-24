@@ -31,11 +31,13 @@ struct MealDetailView: View {
                         VStack(alignment: .leading) {
                             Text("Instructions:")
                                 .font(.title)
+                                .padding(.bottom, 4)
                             Text(recipe.strInstructions ?? "")
                         }
                         VStack(alignment: .leading) {
                             Text("Measurements:")
                                 .font(.title)
+                                .padding(.bottom, 4)
                             ForEach(recipe.getIngredients()) { ingredient in
                                 if ingredient.ingredient != "".trimmingCharacters(in: .whitespaces) {
                                     if let measurement = ingredient.measureMent {
@@ -53,7 +55,7 @@ struct MealDetailView: View {
                                 Spacer()
                             }
                             if let youtube = recipe.strYoutube,
-                                let videoId = youtube.getYoutubeId() {
+                               let videoId = youtube.getYoutubeId() {
                                 TutorialView(tutorialVideoId: videoId)
                                     .frame(width: geometry.size.width - 32, height: 300)
                                     .cornerRadius(16)

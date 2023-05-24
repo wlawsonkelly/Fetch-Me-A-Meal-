@@ -25,6 +25,9 @@
 		0814F96E2A1D52D100FB05F0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F96D2A1D52D100FB05F0 /* Extensions.swift */; };
 		0814F9702A1D863D00FB05F0 /* IngredientMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F96F2A1D863D00FB05F0 /* IngredientMeasurement.swift */; };
 		0814F9722A1E63CC00FB05F0 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F9712A1E63CC00FB05F0 /* TutorialView.swift */; };
+		0814F9742A1E74D200FB05F0 /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F9732A1E74D200FB05F0 /* UrlImageView.swift */; };
+		0814F9762A1E74F900FB05F0 /* UrlImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F9752A1E74F900FB05F0 /* UrlImageViewModel.swift */; };
+		0814F9792A1E76A100FB05F0 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814F9782A1E76A100FB05F0 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		0814F96D2A1D52D100FB05F0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0814F96F2A1D863D00FB05F0 /* IngredientMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientMeasurement.swift; sourceTree = "<group>"; };
 		0814F9712A1E63CC00FB05F0 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		0814F9732A1E74D200FB05F0 /* UrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
+		0814F9752A1E74F900FB05F0 /* UrlImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageViewModel.swift; sourceTree = "<group>"; };
+		0814F9782A1E76A100FB05F0 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +126,6 @@
 				0814F91F2A1D07DF00FB05F0 /* Fetch_Me_A_Meal_App.swift */,
 				0814F9232A1D07E100FB05F0 /* Assets.xcassets */,
 				0814F9252A1D07E100FB05F0 /* Preview Content */,
-				0814F96D2A1D52D100FB05F0 /* Extensions.swift */,
 			);
 			path = "Fetch Me A Meal!";
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 		0814F9492A1D0A4800FB05F0 /* Meals */ = {
 			isa = PBXGroup;
 			children = (
+				0814F9772A1E767800FB05F0 /* Extensions+Helpers */,
 				0814F95E2A1D3EB200FB05F0 /* ViewModels */,
 				0814F95D2A1D3EAA00FB05F0 /* Views */,
 				0814F94E2A1D0A9000FB05F0 /* API */,
@@ -186,6 +192,7 @@
 				0814F9612A1D3ECB00FB05F0 /* MealDetailView.swift */,
 				0814F9672A1D3F8800FB05F0 /* MealListRow.swift */,
 				0814F9712A1E63CC00FB05F0 /* TutorialView.swift */,
+				0814F9732A1E74D200FB05F0 /* UrlImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,8 +203,18 @@
 				0814F9632A1D3EDA00FB05F0 /* MealDetailViewModel.swift */,
 				0814F9652A1D3EED00FB05F0 /* MealListViewModel.swift */,
 				0814F9692A1D3F9300FB05F0 /* MealListRowViewModel.swift */,
+				0814F9752A1E74F900FB05F0 /* UrlImageViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0814F9772A1E767800FB05F0 /* Extensions+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0814F96D2A1D52D100FB05F0 /* Extensions.swift */,
+				0814F9782A1E76A100FB05F0 /* ImageCache.swift */,
+			);
+			path = "Extensions+Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,10 +349,13 @@
 			files = (
 				0814F9722A1E63CC00FB05F0 /* TutorialView.swift in Sources */,
 				0814F9682A1D3F8800FB05F0 /* MealListRow.swift in Sources */,
+				0814F9792A1E76A100FB05F0 /* ImageCache.swift in Sources */,
 				0814F9622A1D3ECB00FB05F0 /* MealDetailView.swift in Sources */,
+				0814F9762A1E74F900FB05F0 /* UrlImageViewModel.swift in Sources */,
 				0814F9662A1D3EED00FB05F0 /* MealListViewModel.swift in Sources */,
 				0814F9702A1D863D00FB05F0 /* IngredientMeasurement.swift in Sources */,
 				0814F9522A1D202E00FB05F0 /* Desert.swift in Sources */,
+				0814F9742A1E74D200FB05F0 /* UrlImageView.swift in Sources */,
 				0814F9202A1D07DF00FB05F0 /* Fetch_Me_A_Meal_App.swift in Sources */,
 				0814F9502A1D0AB000FB05F0 /* MealAPIManager.swift in Sources */,
 				0814F96E2A1D52D100FB05F0 /* Extensions.swift in Sources */,

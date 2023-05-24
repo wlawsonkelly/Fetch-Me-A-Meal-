@@ -12,14 +12,8 @@ struct MealListRow: View {
 
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: meal.strMealThumb)) { image in
-                image
-                    .resizable()
-                    .frame(width: 60, height: 60)
-            } placeholder: {
-                Rectangle()
-                    .redacted(reason: .placeholder)
-            }
+            UrlImageView(urlString: meal.strMealThumb)
+                .cornerRadius(12)
             Text(meal.strMeal)
         }
     }
