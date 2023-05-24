@@ -22,6 +22,7 @@ struct MealListView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Fetch Me A Meal!")
+            .animation(.default, value: mealListViewModel.meals.count)
             .onAppear {
                 Task {
                     try await mealListViewModel.getMeals()
