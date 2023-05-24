@@ -28,7 +28,7 @@ struct CacheAsyncImageView<Content>: View where Content: View {
         self.content = content
     }
 
-    var body: some View{
+    var body: some View {
         if let cached = ImageCache[url] {
             let _ = print("cached: \(url.absoluteString)")
             content(.success(cached))
