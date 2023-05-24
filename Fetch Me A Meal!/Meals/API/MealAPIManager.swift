@@ -26,8 +26,16 @@ class MealAPIManager: MealAPI {
         }
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        let mealList = try JSONDecoder().decode(MealListResponse.self, from: data)
-        return mealList.meals
+        guard let urlResponse = response as? HTTPURLResponse else {
+            return []
+        }
+        if urlResponse.statusCode >= 400 {
+            print("Failure")
+            return []
+        } else {
+            let mealList = try JSONDecoder().decode(MealListResponse.self, from: data)
+            return mealList.meals
+        }
     }
 
     func getDesertRecipe(id: String) async throws -> Recipe? {
@@ -35,7 +43,15 @@ class MealAPIManager: MealAPI {
         }
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        let recipe = try JSONDecoder().decode(MealDetailResponse.self, from: data)
-        return recipe.meals.first
+        guard let urlResponse = response as? HTTPURLResponse else {
+            return nil
+        }
+        if urlResponse.statusCode >= 400 {
+            print("Failure")
+            return nil
+        } else {
+            let recipe = try JSONDecoder().decode(MealDetailResponse.self, from: data)
+            return recipe.meals.first
+        }
     }
 }
