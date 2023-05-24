@@ -9,12 +9,20 @@ import SwiftUI
 
 struct MealListRow: View {
     var meal: MealListData
-
+    
     var body: some View {
         HStack {
-            UrlImageView(urlString: meal.strMealThumb)
-                .cornerRadius(12)
-            Text(meal.strMeal)
+            if let url = URL(string: meal.strMealThumb) {
+                CacheAsyncImageView(url: url) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .cornerRadius(12)
+                    }
+                }
+                Text(meal.strMeal)
+            }
         }
     }
 }
