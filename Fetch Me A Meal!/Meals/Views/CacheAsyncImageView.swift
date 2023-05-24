@@ -55,7 +55,7 @@ struct CacheAsyncImageView<Content>: View where Content: View {
 fileprivate class ImageCache {
     static private var cache: [URL: Image] = [:]
 
-    static subscript(url: URL) -> Image?{
+    static subscript(url: URL) -> Image? {
         get {
             ImageCache.cache[url]
         }
