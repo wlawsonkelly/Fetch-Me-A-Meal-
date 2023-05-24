@@ -19,16 +19,11 @@ class MealDetailViewModel: ObservableObject {
     func getDetails(id: String) async throws {
         do {
             let fetchedRecipe = try await MealAPIManager.shared.getDesertRecipe(id: id)
-            getIngredientArray()
             DispatchQueue.main.async {
                 self.recipe = fetchedRecipe
             }
         } catch {
             print(error.localizedDescription)
         }
-    }
-
-    func getIngredientArray() {
-
     }
 }

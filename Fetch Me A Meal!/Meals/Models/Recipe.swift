@@ -66,6 +66,7 @@ struct Recipe: Codable {
     var strCreativeCommonsConfirmed: Bool?
     var dateModified: String?
 
+    // Below function is not ideal; however, I feel that the best way to optimize it would be from the data from the server. I'd probably reconfigure the json to make an array of ditcionaries where {Ingredient:Measurement}
     func getIngredients() -> [IngredientMeasurement] {
         var ingredientArray: [IngredientMeasurement] = []
         if let ingredient = strIngredient1 {

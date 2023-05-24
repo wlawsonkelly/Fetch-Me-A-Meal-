@@ -13,6 +13,7 @@ struct MealListView: View {
 
     var body: some View {
         NavigationView {
+            // Lists are lazy which is interesting for the Image Cache!
             List(mealListViewModel.meals) { meal in
                 MealListRow(meal: meal)
                     .onTapGesture {
