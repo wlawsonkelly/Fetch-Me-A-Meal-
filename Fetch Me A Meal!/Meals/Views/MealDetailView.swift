@@ -48,6 +48,12 @@ struct MealDetailView: View {
                         }
                     }
                     .padding()
+                    VStack {
+                        if let youtube = recipe.strYoutube {
+                            TutorialView(tutorialUrl: youtube)
+                                .frame(width: geometry.size.width - 32, height: 300)
+                        }
+                    }
                 }
             }
             .onAppear {
